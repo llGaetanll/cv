@@ -18,6 +18,9 @@
 \usepackage{titlesec}
 \usepackage{anyfontsize}
 \usepackage{parskip}
+\usepackage{multicol}
+\usepackage{microtype}
+\usepackage[super]{nth}
 
 \usepackage[hidelinks]{hyperref}
 
@@ -29,7 +32,7 @@
 % ================== %
 \titleformat{\section}
    {\intertabular\small\bfseries\MakeUppercase}{}{1em}{}
-\titlespacing{\section}{-1pc}{*2}{*1.5}
+\titlespacing{\section}{-1pc}{*4}{*0.5}
 
 \titleformat{\subsection}
    {\normalfont\normalsize\bfseries}{}{1em}{}
@@ -40,48 +43,53 @@
 \titlespacing{\subsection}{-0.5pc}{*4}{*1.5}
 
 
+
+% Method 1: Using \linespread
+%\linespread{0.9} % Adjust the value to your desired line spacing
+
+% Method 2: Adjusting \baselineskip
+%\setlength{\baselineskip}{0.9\baselineskip} % Adjust the value to your desired line spacing
+
+\setlength{\parskip}{0pt} % Adjust the value to your desired line break height
+
+
 % ========================== %
 %   Format a project title
 % ========================== %
 \newcommand{\bigtitle}[5]{
-   {\bf \large #1} \textemdash{} {\large \it #2}
+  {\bf \large #1} \textemdash{} {\large \it #2} \hfill {#3}
 
-   % dates & links
-   {\small #3} {\small #4}
+  {\small #4}
 
-   \smallskip
+  \smallskip
 
-   #5 % description
+  #5 % description
 
-   \bigskip
+  \medskip
 }
 
 \newcommand{\medtitle}[3]{
-   \textbf{\textit{#1}}
+  \textbf{\textit{#1}} \hfill {#2}
 
-   {\it #2} % date
+  \smallskip
 
-   \smallskip
+  {#3} % content
 
-   {#3} % content
-
-   \medskip
+  \medskip
 }
 
 \newcommand{\smalltitle}[2]{
-   \textbf{\textit{#1}}
-
-   #2
+   \textbf{\textit{#1}}: #2
 
    \medskip
 }
 
 \newcommand{\link}[2]{
-   \underline{\textbf{\href{#1}{#2}}}
+   \underline{{\href{#1}{#2}}}
 }
 
 \newcommand{\course}[2]{
-   {\small {\textbf{\textit{#1}}} \hfill {#2}}
+  {\small {\textbf{\textit{#1}}} {#2}}
 }
 
 % remove page numbering
@@ -95,157 +103,129 @@
 \newcolumntype{S}{>{\hsize=0.4\hsize}X}
 
 \begin{document}
-   \begin{tabularx}{\textwidth}{LS}
-      {\fontsize{40}{50} \selectfont \bf \intertabular Ga\"etan Almela}
+    {\fontsize{40}{50} \selectfont \bf \intertabular Gaetan Almela}
 
-      \smallskip
+    \smallskip
 
-      {\bf My name is Ga\"etan}, and I am a 22 year old programmer looking for an
-      internship in Software Engineering or Data Science.
+    {\bf My name is Gaetan}, and I am a 22 year old programmer looking for an
+    internship in Software Engineering, Data Science, or Machine Learning.
 
-      &
+    \begin{center}
+      \begin{multicols}{3}
+       {\bf almela.io}
 
-      \begin{flushright}
-         {\bf almela.io}
+       gaetan@{\bf almela.io}
 
-         gaetan@{\bf almela.io}
+       github.com/{\bf llGaetanll}
+      \end{multicols}
+    \end{center}
 
-         github.com/{\bf llGaetanll}
-      \end{flushright}
+    \section{Work Experience}
 
-      \\
+    \bigtitle{SIG}{Real-world trading software}
+    {
+      \textit{Philadelphia} $\Big|$ \textbf{Jun -- Aug 2023}
+    }
+    {}
+    {
+      Implemented an inter-process communication system for software {\bf used
+      by hundreds of traders everyday}.
+    }
 
-      \section{Work Experience}
+    \bigtitle{Arandis}{Data science in finance}
+    {
+      \textit{France} $\Big|$ \textbf{Mar -- Apr 2021}
+    }
+    {}
+    {
+       Developed over {\bf 60 fully automated} web scrapers to extract ETF fund data everyday.
+    }
 
-      \bigtitle{SIG}{Real-world trading software}
-      {
-        {\bf Jun -- Aug 2023} \textemdash{} Philadelphia
-      }
-      {}
-      {
-        Implemented an inter-process communication system for software {\bf used
-        by hundreds of traders per day}.
-      }
+    \bigtitle{Amazon Marketplace}{Scraping the web}
+    {
+      \textit{France} $\Big|$ \textbf{Jan -- Mar 2019}
+    }
+    {}
+    {
+       Developed a fully automated marketplace scraper to extract {\bf over 30,000
+       data points} from competitors including pricing, and seller databases.
+    }
 
-      \bigtitle{Arandis}{Data science in finance}
-      {
-         {\bf Mar -- Apr 2021} \textemdash{} France
-      }
-      {}
-      {
-         Developed over {\bf 60 fully automated} web scrapers to extract ETF fund data everyday.
-      }
+    \section{Projects}
 
-      % \bigtitle{Senzing}{Working with Containerization}
-      % {
-      %    {\bf Dec 2019 -- Mar 2020} \textemdash{} Washington, D.C.
-      % }
-      % {}
-      % {
-      %    Part-time, working with {\bf Docker} \& Senzing entity resolution API.
-      % }
+    \bigtitle{obx}{Object manipulation done right}
+    {
+      \link{https://github.com/llGaetanll/obx/}{GitHub}
+      /
+      \link{https://www.npmjs.com/package/@almela/obx}{npm}
+      $\Big|$
+      \textbf{2022}
+    }
+    {
+       obx is a super fast, tiny, well documented, and battle-tested object
+       manipulation library for JavaScript.
+    }
 
-      \bigtitle{Amazon Marketplace}{Scraping the web}
-      {
-         {\bf Jan -- Mar 2019} \textemdash{} France
-      }
-      {}
-      {
-         Developed a fully automated marketplace scraper to extract {\bf over 30,000
-         data points} from competitors including pricing, and seller databases.
-      }
+    \bigtitle{Klue}{Remembering the Kanji}
+    {
+      \link{https://github.com/llGaetanll/Klue}{GitHub}
+      /
+      \link{https://klue.vercel.app/}{Website}
+      $\Big|$
+      \textbf{2019 -- 2022}
+    }
+    {
+       Klue is a flashcard website designed to help you remember the Kanji
+       using spaced repetition and by giving you statistics on your learning.
+    }
 
-      \section{Projects}
+    \bigtitle{Accents}{Accent support for Chrome}
+    {
+      \link{https://github.com/eugli/Accents}{GitHub}
+      /
+      \link{https://chrome.google.com/webstore/detail/accents-spanish-portugues/laiognlohmgkmlfchcclnjnafgeinnpg}{Web Store}
+      $\Big|$
+      \textbf{2019}
+    }
+    {
+       Co-founder of Accents, an extension for Chrome that adds easy accents
+       to the keyboard. It emulates the accent system of \nobreak MacOS while adding
+       keyboard shortcuts and functionalities.
 
-      \bigtitle{obx}{Object manipulation done right}{{\bf 2022}}
-      {
-         \link{https://github.com/llGaetanll/obx/}{GitHub}
-         /
-         \link{https://www.npmjs.com/package/@almela/obx}{npm}
-      }
-      {
-         obx is a super fast, tiny, well documented, and battle-tested object
-         manipulation library for JavaScript.
-      }
+       \smallskip
 
-      \bigtitle{Klue}{Remembering the Kanji}{{\bf 2019 -- 2022}}
-      {
-         \link{https://github.com/llGaetanll/Klue}{GitHub}
-         /
-         \link{https://klue.vercel.app/}{Website}
-      }
-      {
-         Klue is a flashcard website designed to help you remember the Kanji
-         using spaced repetition and by giving you statistics on your learning.
-      }
+       At its peak, the extension had over {\bf 40,000 users}.
+    }
 
-      \bigtitle{Accents}{Accent support for Chrome}{{\bf 2019}}
-      {
-         \link{https://github.com/eugli/Accents}{GitHub}
-         /
-         \link{https://chrome.google.com/webstore/detail/accents-spanish-portugues/laiognlohmgkmlfchcclnjnafgeinnpg}{Web Store}
-      }
-      {
-         Co-founder of Accents, an extension for Chrome that adds easy accents
-         to the keyboard. It emulates the accent system of \nobreak MacOS while adding
-         keyboard shortcuts and functionalities.
+    \section{Education}
 
-         \bigskip
+    \medtitle{University of Maryland}
+    {\textbf{Fall 2019 -- Spring 2024}}
+    {
+       Computer Science and Mathematics Double Major. Expected to graduate May
+       $\nth{20}$ 2024.
+    }
 
-         At its peak, the extension had over {\bf 40,000 users}.
-      }
+    \course{CMSC320}{Data Science}, \course{CMSC420}{Data Structures},
+    \course{CMSC422}{Machine Learning}, \course{CMSC424}{Database Design},
+    \course{CMSC451}{Advanced Algorithms}, \course{STAT410}{Probability Theory}
 
-      &
+    \section{Skills}
 
-      \section{Education}
+    \smalltitle{Web}{
+      React, Redux, GraphQL, MongoDB, PostgreSQL, Actix Web
+    }
 
-      \medtitle{University of Maryland}{Fall 2019 -- Spring 2024}{
-         Computer Science and Mathematics Double Major
-      }
+    \smalltitle{Data Science}{
+      Numpy, Pandas, SciKit Learn, SciPy, Jupyter
+    }
 
-      \section{Courses Taken}
+    \smalltitle{Programming Languages}{
+      Rust, JavaScript, Go, Python, Shell
+    }
 
-      \course{CMSC320}{Data Science}
-
-      \course{CMSC451}{Advanced Algorithms}
-
-      \course{CMSC422}{Machine Learning}
-
-      % \course{CMSC424}{Database Design}
-
-      \course{STAT410}{Probability Theory}
-
-      \section{Awards}
-
-      \medtitle{Published Social Scientist}{2017}{
-         Author of ``Who controls the Web." in the Gulliver Principles of Social
-         Science journal.
-      }
-
-      \medtitle{Congressional App Challenge}{2017}{
-         Creator of award-winning smartphone app ChromaTilt.
-      }
-
-      \section{Skills}
-
-      \smalltitle{Web}{
-         React, Redux, GraphQL, MongoDB, Actix Web, PostgreSQL
-      }
-
-      \smalltitle{Data Science}{
-         Pandas, SciKit Learn, SciPy, Jupyter
-      }
-
-      \smalltitle{Programming Languages}{
-         Javascript, Rust, Go, Python, Shell
-      }
-
-      \smalltitle{Other}{
-         Efficient with {\bf GNU/Linux}
-
-         Fluent in {\bf English} \& {\bf French}
-
-         Rubik's Cube World Championship 2017 Contestant.
-      }
-   \end{tabularx}
+    \smalltitle{Other}{
+      Efficient with {\bf GNU/Linux}, Fluent in {\bf English} and {\bf French},
+      Rubik's Cube World Championship 2017 Contestant.
+    }
 \end{document}
