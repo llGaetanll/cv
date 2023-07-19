@@ -32,7 +32,7 @@
 % ================== %
 \titleformat{\section}
    {\intertabular\small\bfseries\MakeUppercase}{}{1em}{}
-\titlespacing{\section}{-1pc}{*4}{*0.5}
+\titlespacing{\section}{-1pc}{*2}{*0.5}
 
 \titleformat{\subsection}
    {\normalfont\normalsize\bfseries}{}{1em}{}
@@ -79,7 +79,7 @@
 }
 
 \newcommand{\smalltitle}[2]{
-   \textbf{\textit{#1}}: #2
+   \textbf{\textit{#1}} #2
 
    \medskip
 }
@@ -122,33 +122,49 @@
 
     \section{Work Experience}
 
+    \smallskip
+
     \bigtitle{SIG}{Real-world trading software}
     {
-      \textit{Philadelphia} $\Big|$ \textbf{Jun 2023 -- Aug 2023}
+      \textit{Philadelphia} $\big|$ \textbf{Jun 2023 -- Aug 2023}
     }
     {}
     {
-      Implemented an inter-process communication system for software {\bf used
-      by hundreds of traders every day}.
+      \begin{itemize}
+        \item[$-$] Implemented a data syncing system for software {\bf used by
+          hundreds of traders every day}.
+        \item[$-$] Developed and deployed a remote REST API to keep track of data
+          relations between independent instances of the trading system.
+        \item[$-$] Learned invaluable lessons working with larger teams,
+          code bases, and shipping software that scales.
+      \end{itemize}
     }
 
     \bigtitle{Arandis}{Data science in finance}
     {
-      \textit{France} $\Big|$ \textbf{Mar 2021 -- Apr 2021}
+      \textit{France} $\big|$ \textbf{Mar 2021 -- Apr 2021}
     }
     {}
     {
-       Developed over {\bf 60 fully automated} web scrapers to extract ETF fund data every day.
+      \begin{itemize}
+        \item[$-$] Developed over {\bf 60 fully automated} Selenium web scrapers to extract
+              ETF fund data every day.
+        \item[$-$] Got hands-on experience with data analysis in Numpy and Pandas.
+        \item[$-$] Learned how to work in a team of other developers.
+      \end{itemize}
     }
 
     \bigtitle{Amazon Marketplace}{Scraping the web}
     {
-      \textit{France} $\Big|$ \textbf{Jan 2019 -- Mar 2019}
+      \textit{France} $\big|$ \textbf{Jan 2019 -- Mar 2019}
     }
     {}
     {
-       Developed a fully automated marketplace scraper to extract {\bf over 30,000
-       data points} from competitors including pricing, and seller databases.
+      \begin{itemize}
+        \item[$-$] Developed a fully automated scraper to extract {\bf over 30,000
+              data points} from competitors.
+        \item[$-$] Learned valuable lessons in structuring and writing larger programs.
+      \end{itemize}
     }
 
     \section{Projects}
@@ -162,8 +178,8 @@
       \textbf{2022}
     }
     {
-       obx is a super fast, tiny, well documented, and battle-tested object
-       manipulation library for JavaScript.
+      obx is a super fast, tiny, well documented, and battle-tested object
+      manipulation library for JavaScript.
     }
 
     \bigtitle{Klue}{Remembering the Kanji}
@@ -175,8 +191,8 @@
       \textbf{2019 -- 2022}
     }
     {
-       Klue is a flashcard website designed to help you remember the Kanji
-       using spaced repetition and by giving you statistics on your learning.
+      Klue is a flashcard website designed to help you remember the Kanji
+      using spaced repetition and by giving you statistics on your learning.
     }
 
     \bigtitle{Accents}{Accent support for Chrome}
@@ -188,13 +204,10 @@
       \textbf{2019}
     }
     {
-       Co-founder of Accents, an extension for Chrome that adds easy accents
-       to the keyboard. It emulates the accent system of \nobreak MacOS while adding
-       keyboard shortcuts and functionalities.
-
-       \smallskip
-
-       At its peak, the extension had over {\bf 40,000 users}.
+      Co-founder of Accents, an extension for Chrome that adds easy accents
+      to the keyboard. It emulates the accent system of \nobreak MacOS while adding
+      keyboard shortcuts and functionalities. At its peak, the extension had
+      over {\bf 40,000 users}.
     }
 
     \section{Education}
