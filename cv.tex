@@ -20,6 +20,7 @@
 \usepackage{parskip}
 \usepackage{multicol}
 \usepackage{microtype}
+\usepackage{enumitem}
 \usepackage[super]{nth}
 
 \usepackage[hidelinks]{hyperref}
@@ -52,6 +53,8 @@
 
 \setlength{\parskip}{0pt} % Adjust the value to your desired line break height
 
+\setitemize[0]{leftmargin=15pt}
+
 
 % ========================== %
 %   Format a project title
@@ -63,7 +66,7 @@
 
   \smallskip
 
-  #5 % description
+  {#5} % description
 
   \medskip
 }
@@ -81,7 +84,7 @@
 \newcommand{\smalltitle}[2]{
    \textbf{\textit{#1}} #2
 
-   \medskip
+   \smallskip
 }
 
 \newcommand{\link}[2]{
@@ -124,7 +127,7 @@
 
     \smallskip
 
-    \bigtitle{SIG}{Real-world trading software}
+    \bigtitle{SIG}{Large scale trading software}
     {
       \textit{Philadelphia} $\big|$ \textbf{Jun 2023 -- Aug 2023}
     }
@@ -149,7 +152,8 @@
       \begin{itemize}
         \item[$-$] Developed over {\bf 60 fully automated} Selenium web scrapers to extract
               ETF fund data every day.
-        \item[$-$] Got hands-on experience with data analysis in Numpy and Pandas.
+        \item[$-$] Performed data analysis in Numpy and Pandas on {\bf over
+              45,000 data points} from hundreds of different sources.
         \item[$-$] Learned how to work in a team of other developers.
       \end{itemize}
     }
@@ -178,8 +182,9 @@
       \textbf{2022}
     }
     {
-      obx is a super fast, tiny, well documented, and battle-tested object
-      manipulation library for JavaScript.
+      obx is a fast, tiny, well documented, and battle-tested object
+      manipulation library for JavaScript with over {\bf 1000 tests}. It is used
+      in many of my projects including some listed below.
     }
 
     \bigtitle{Klue}{Remembering the Kanji}
@@ -193,6 +198,7 @@
     {
       Klue is a flashcard website designed to help you remember the Kanji
       using spaced repetition and by giving you statistics on your learning.
+      Built using NextJs and Redux.
     }
 
     \bigtitle{Accents}{Accent support for Chrome}
