@@ -102,8 +102,8 @@ My name is Gaëtan, I'm a Rust developer at Ransky Tech.
   place: [ France ],
   desc: [
     Developed a fully automated marketplace scraper to extract
-    over 30,000 data points from competitors including pric-
-    ing, and seller databases.
+    over 30,000 data points from competitors including pricing,
+    and seller databases.
   ]
 )
 
@@ -187,7 +187,7 @@ My name is Gaëtan, I'm a Rust developer at Ransky Tech.
 *CMSC424* Database Design, *CMSC451* Advanced Algorithms, *STAT410* Probability
 Theory.
 
-#sec_title[Miscelanious]
+#sec_title[Miscellaneous]
 
 Efficient with GNU/Linux, Fluent in English and French, Rubik’s Cube World Championship
 2017 Participant.
